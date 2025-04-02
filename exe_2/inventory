@@ -22,7 +22,7 @@ all:
       hosts:
         db01:
   
-  master_group:
-    children:
-      webservers:
-      dbservers:
+    master_group:
+      children:
+        webservers:
+        dbservers:

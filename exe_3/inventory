@@ -1,0 +1,25 @@
+all:
+  hosts:
+    web01:
+      ansible_host: 172.31.94.24
+    web02:
+      ansible_host: 172.31.88.183
+    db01:
+      ansible_host: 172.31.88.49
+
+  children:
+    webservers:
+      hosts:
+        web01:
+        web02:
+    dbservers:
+      hosts:
+        db01:
+  
+    master_group:
+      children:
+        webservers:
+        dbservers:
+      vars:
+        ansible_ssh_private_key_file: my-nv.pem
+        ansible_user: ubuntu

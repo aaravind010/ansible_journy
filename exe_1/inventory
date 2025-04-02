@@ -1,0 +1,6 @@
+all:
+  hosts:
+    web01:
+      ansible_user: ubuntu
+      ansible_host: 172.31.94.24
+      ansible_ssh_private_key_file: my-nv.pem
